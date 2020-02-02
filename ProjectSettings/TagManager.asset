@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - rupee
+  - Stalfos
+  - lr
+  - ud
+  - locked
+  - locked_left
+  - locked_right
+  - key
+  - heart
+  - bomb
+  - sword
+  - Keese
+  - movable
+  - special_door
+  - Gel
+  - BladeTrap
+  - arrow
+  - obstacle
+  - bow
+  - aquamentus
+  - boomerange
+  - goriya
+  - linkboomerange
+  - boomerangeicon
+  - triangle
+  - next
+  - chess
+  - fire
+  - hell_floor
+  - bat
+  - head
+  - begin_again
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Player
+  - Door
+  - Stalfos
+  - God
+  - SwordDown
+  - Sword
+  - Keese
+  - Gel
+  - BladeTrap
+  - ArrowDown
+  - Arrow
+  - Bow
+  - Aquamentus
+  - Boomerange
+  - Goriya
+  - LinkBoomerange
+  - LinkBoomerangeDown
+  - BoomerangeIcon
+  - Chess
+  - TriangleDown
+  - Bat
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
