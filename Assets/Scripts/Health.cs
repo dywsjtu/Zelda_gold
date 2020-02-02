@@ -12,13 +12,22 @@ public class Health : MonoBehaviour
 
     float life = 3f;
     float hell_time = 0;
-
+    private bool isCatched = false;
     // Start is called before the first frame update
     void Start()
     {
 
     }
 
+    public void SetCatch()
+    {
+        isCatched = !isCatched;
+    }
+
+    public bool GetCatch()
+    {
+        return isCatched;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -110,6 +119,13 @@ public class Health : MonoBehaviour
             // Destroy(object_collided_with);
 
             // AudioSource.PlayClipAtPoint(life_collection_sound_clip, Camera.main.transform.position);
+        }
+        if (object_collided_with.tag == "WallMaster")
+        {
+            Debug.Log("wallmaster get player");
+            AudioSource.PlayClipAtPoint(life_lose_sound_clip, Camera.main.transform.position);
+            this.LoseLife(0.5f);
+            GetComponent<Rigidbody>().velocity = Vector3.zero;
         }
     }
 
