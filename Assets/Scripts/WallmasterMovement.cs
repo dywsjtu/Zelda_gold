@@ -57,6 +57,7 @@ public class WallmasterMovement : MonoBehaviour
         speed = 0f;
         if (player){
             player.GetComponent<ArrowKeyMovement>().Enable();
+            player.GetComponent<Rigidbody>().velocity = Vector3.zero;
             player.GetComponent<Health>().SetCatch();
             player.transform.position = new Vector3(39.5f, 1, 0);
             player = null;
@@ -72,10 +73,11 @@ public class WallmasterMovement : MonoBehaviour
             if (!other.gameObject.GetComponent<Health>().GetCatch())
             {
                 player = other.gameObject;
-                player.GetComponent<ArrowKeyMovement>().Disable();
-                player.GetComponent<Health>().SetCatch();
+                // player.GetComponent<Health>().SetCatch();
+                // player.GetComponent<ArrowKeyMovement>().Disable();
+
             }
-            //Debug.Log("wallmaster get player");
+            Debug.Log("wallmaster get player");
         }
     }
 

@@ -122,10 +122,15 @@ public class Health : MonoBehaviour
         }
         if (object_collided_with.tag == "WallMaster")
         {
-            Debug.Log("wallmaster get player");
-            AudioSource.PlayClipAtPoint(life_lose_sound_clip, Camera.main.transform.position);
-            this.LoseLife(0.5f);
-            GetComponent<Rigidbody>().velocity = Vector3.zero;
+            if (isCatched == false)
+            {
+                Debug.Log("wallmaster get player");
+                SetCatch();
+                GetComponent<ArrowKeyMovement>().Disable();
+                AudioSource.PlayClipAtPoint(life_lose_sound_clip, Camera.main.transform.position);
+                GetComponent<Rigidbody>().velocity = Vector3.zero;
+                this.LoseLife(0.5f);
+            }
         }
     }
 
