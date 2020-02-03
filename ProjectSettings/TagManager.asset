@@ -37,6 +37,7 @@ TagManager:
   - head
   - begin_again
   - WallMaster
+  - BombIcon
   layers:
   - Default
   - TransparentFX
@@ -68,8 +69,8 @@ TagManager:
   - TriangleDown
   - Bat
   - WallMaster
-  - 
-  - 
+  - keese_wall
+  - ir_keese
   m_SortingLayers:
   - name: Default
     uniqueID: 0
