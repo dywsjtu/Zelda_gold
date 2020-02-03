@@ -7,7 +7,7 @@ public class AquamentusHealth : MonoBehaviour
     public AudioClip enemy_hit_sound_clip;
     public AudioClip enemy_die_sound_clip;
 
-    private int life = 1;
+    private int life = 5;
 
     // Start is called before the first frame update
     void Start()
