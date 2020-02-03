@@ -8,7 +8,7 @@ public class GelMovement : MonoBehaviour
 
     Rigidbody rb;
 
-    Vector2[] direction = { Vector2.up, Vector2.down, Vector2.left, Vector2.right, Vector2.zero };
+    Vector2[] direction = { Vector2.up, Vector2.down, Vector2.left, Vector2.right, Vector2.zero,Vector2.zero,Vector2.zero,Vector2.zero };
 
     Coroutine current_move;
 
@@ -23,7 +23,7 @@ public class GelMovement : MonoBehaviour
     {
         while (true)
         {
-            Vector2 dir = direction[Random.Range(0, 5)];
+            Vector2 dir = direction[Random.Range(0, 8)];
             // if (dir.x != 0)
             // {
             if (Mathf.Round(transform.position.y) != transform.position.y)
@@ -37,6 +37,10 @@ public class GelMovement : MonoBehaviour
             {
                 transform.position = new Vector3(Mathf.Round(transform.position.x), transform.position.y, transform.position.z);
             }
+            // }
+            // for (int t = 0; t < 20; t++)
+            // {
+            //     yield return null;
             // }
             for (float moved = 0; moved < 1; moved += movement_speed * Time.deltaTime)
             {
