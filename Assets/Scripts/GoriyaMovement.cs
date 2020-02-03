@@ -14,6 +14,7 @@ public class GoriyaMovement : MonoBehaviour
     Coroutine current_move;
     BoomerangeFly boomerangeFly;
     bool back = false;
+    public bool stun = false;
 
     // Start is called before the first frame update
     void Start()
@@ -45,6 +46,10 @@ public class GoriyaMovement : MonoBehaviour
                 // Debug.Log(attack);
                 current_direction = Random.Range(0, 4);
                 Vector2 dir = direction[current_direction];
+                if (stun)
+                {
+                    dir = Vector2.zero;
+                }
                 float seed = Random.Range(0f, 1f);
                 if (dir.x != 0)
                 {
