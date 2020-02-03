@@ -19,6 +19,13 @@ public class InputToAnimator : MonoBehaviour
         {
             Attack();
         }
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            int temp_weapon = GetComponent<Weapon>().which_weapon;
+            GetComponent<Weapon>().which_weapon = 0;
+            Attack();
+            GetComponent<Weapon>().which_weapon = temp_weapon;
+        }
 
         Vector2 dir = GetComponent<ArrowKeyMovement>().GetInput();
         if (dir.x == 0 && dir.y == 0)
