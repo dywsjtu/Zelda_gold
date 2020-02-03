@@ -71,9 +71,10 @@ public class Weapon : MonoBehaviour
         }
         if (which_weapon == 1)
         {
-            if (is_flying == false)
+            if (is_flying == false && GetComponent<Inventory>().GetRupees() > 0)
             {
                 is_flying = true;
+                GetComponent<Inventory>().UseRupees(1);
                 arrows[GetComponent<ArrowKeyMovement>().dir].layer = 18;
                 arrows[GetComponent<ArrowKeyMovement>().dir].GetComponent<SpriteRenderer>().sortingOrder = 1;
                 arrows[GetComponent<ArrowKeyMovement>().dir].GetComponent<ArrowFly>().SetFly();
