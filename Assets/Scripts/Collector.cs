@@ -46,11 +46,12 @@ public class Collector : MonoBehaviour
             AudioSource.PlayClipAtPoint(key_collection_sound_clip, Camera.main.transform.position);
         }
 
-        if (object_collided_with.tag == "bomb")
+        if (object_collided_with.tag == "BombIcon")
         {
             if (inventory != null)
             {
-                inventory.AddBombs(1);
+                inventory.AddBombs(5);
+                inventory.WeaponBomb();
             }
             Destroy(object_collided_with);
 

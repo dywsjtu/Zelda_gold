@@ -44,5 +44,10 @@ public class WallMasterHealth : MonoBehaviour
             AudioSource.PlayClipAtPoint(enemy_hit_sound_clip, Camera.main.transform.position);
             life -= 1;
         }
+        if (other.CompareTag("bomb"))
+        {
+            AudioSource.PlayClipAtPoint(enemy_hit_sound_clip, Camera.main.transform.position);
+            life -= 1;
+        }
     }
 }

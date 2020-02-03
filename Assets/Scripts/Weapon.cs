@@ -10,10 +10,16 @@ public class Weapon : MonoBehaviour
     public GameObject[] boomerange;
     public int which_weapon = 0;
     public bool[] weapon_got = { true, false, false, false };
+    public Vector3[] direction = { Vector3.up, Vector3.down, Vector3.left, Vector3.right };
     public bool is_flying = false;
     public AudioClip sword_sound_clip;
     public AudioClip sword_fly_sound_clip;
     public AudioClip arrow_sound_clip;
+    public AudioClip bomb_explode_clip;
+    public AudioClip bomb_drop_clip;
+    private GameObject bomb;
+    public GameObject bomb_prefab;
+    public bool bomb_exist = false;
 
     // Start is called before the first frame update
     void Start()
@@ -84,6 +90,50 @@ public class Weapon : MonoBehaviour
                 boomerange[GetComponent<ArrowKeyMovement>().dir].GetComponent<LinkBoomerangeFly>().SetFly();
             }
         }
+        if (which_weapon == 3 )
+        {
+            if (GetComponent<Inventory>().GetBombs() == 0)
+            {
+                return null;
+            }
+            if (bomb_exist)
+            {
+                return null;
+            }
+            Vector3 player_position = transform.position;
+            Vector3 bomb_position = player_position + direction[GetComponent<ArrowKeyMovement>().dir];
+            GetComponent<Inventory>().UseBombs(1);
+            AudioSource.PlayClipAtPoint(bomb_drop_clip, Camera.main.transform.position);
+            Debug.Log("Bomb Initialization");
+            bomb = Instantiate(bomb_prefab, bomb_position, Quaternion.identity);
+            bomb_exist = true;
+
+            StartCoroutine(Explode());
+        }
         return null;
     }
+
+    IEnumerator Explode()
+    {
+        int t = 50;
+        while (t > 0)
+        {
+            t--;
+            yield return 0;
+        }
+        bomb.GetComponent<CapsuleCollider>().enabled = true;
+        bomb.GetComponent<Animator>().SetBool("start", true);
+        AudioSource.PlayClipAtPoint(bomb_explode_clip, Camera.main.transform.position);
+        t = 30;
+        while (t > 0)
+        {
+            t--;
+            yield return 0;
+        }
+        bomb.GetComponent<CapsuleCollider>().enabled = false;
+        bomb.GetComponent<Animator>().SetBool("start", false);
+        Destroy(bomb);
+        bomb_exist = false;
+    }
+
 }
