@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7734208476955321709}
   - component: {fileID: 7734208476955321711}
   - component: {fileID: 7734208476955321616}
+  - component: {fileID: 639749000530766229}
   m_Layer: 22
   m_Name: Goriya
   m_TagString: goriya
@@ -179,3 +180,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boomerange: {fileID: 3284534126098756156, guid: faedea69441f342bca29fdf4892dcb07,
     type: 3}
+--- !u!114 &639749000530766229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7734208476955321704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d217e6a39a04a45e2964aace77e3a365, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 6175599770639495818, guid: 0f11624d83e7d4dd5a2851624631acad, type: 3}
+  - {fileID: 5739993580176190642, guid: 1607a20116112497e84fa1368d14f408, type: 3}
+  - {fileID: 1406982949114966055, guid: 58a06e86d53d0472cb8beef37b54565d, type: 3}

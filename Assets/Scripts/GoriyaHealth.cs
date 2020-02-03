@@ -21,6 +21,7 @@ public class GoriyaHealth : MonoBehaviour
         if (life <= 0)
         {
             AudioSource.PlayClipAtPoint(enemy_die_sound_clip, Camera.main.transform.position);
+            GetComponent<DropItem>().Drop();
             Destroy(gameObject);
         }
     }

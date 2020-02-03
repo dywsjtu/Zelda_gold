@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1359160223999586860}
   - component: {fileID: 8447398661917371709}
   - component: {fileID: -6561670048365972751}
+  - component: {fileID: -7206793389041765101}
   m_Layer: 10
   m_Name: Stalfos
   m_TagString: Stalfos
@@ -163,3 +164,19 @@ MonoBehaviour:
     type: 3}
   enemy_die_sound_clip: {fileID: 8300000, guid: 58b99fd2499bb4a91a14cd66710d14ce,
     type: 3}
+--- !u!114 &-7206793389041765101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359160223999586851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d217e6a39a04a45e2964aace77e3a365, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 6175599770639495818, guid: 0f11624d83e7d4dd5a2851624631acad, type: 3}
+  - {fileID: 5739993580176190642, guid: 1607a20116112497e84fa1368d14f408, type: 3}
+  - {fileID: 1406982949114966055, guid: 58a06e86d53d0472cb8beef37b54565d, type: 3}
