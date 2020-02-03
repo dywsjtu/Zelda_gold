@@ -21,7 +21,7 @@ public class FireBall : MonoBehaviour
         rb.velocity = direction * speed;
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.name == "Tile_WALL")
         {

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7589485748421753112}
   - component: {fileID: 7589485748421753108}
   - component: {fileID: 529123289870590024}
+  - component: {fileID: 5376468926119985005}
   m_Layer: 29
   m_Name: Wallmaster
   m_TagString: WallMaster
@@ -149,3 +150,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
+--- !u!114 &5376468926119985005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7589485748421753113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a5149e60140f4217b9384cef6d5a24c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy_hit_sound_clip: {fileID: 8300000, guid: 673d1bd77d113415bbc0a15c0c655d4f,
+    type: 3}
+  enemy_die_sound_clip: {fileID: 8300000, guid: 58b99fd2499bb4a91a14cd66710d14ce,
+    type: 3}

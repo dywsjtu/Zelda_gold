@@ -71,8 +71,9 @@ public class Health : MonoBehaviour
     {
         GameObject object_collided_with = other.gameObject;
 
-        if (object_collided_with.tag == "Stalfos" || object_collided_with.tag == "Keese" || object_collided_with.tag == "Gel" || object_collided_with.tag == "Aquamentus" || object_collided_with.tag == "goriya" || object_collided_with.tag == "boomerange" || object_collided_with.tag == "BladeTrap" || object_collided_with.tag == "chess")
+        if (object_collided_with.tag == "Stalfos" || object_collided_with.tag == "Keese" || object_collided_with.tag == "Gel" || object_collided_with.tag == "aquamentus" || object_collided_with.tag == "goriya" || object_collided_with.tag == "boomerange" || object_collided_with.tag == "BladeTrap" || object_collided_with.tag == "chess")
         {
+            Debug.Log(object_collided_with.tag);
             AudioSource.PlayClipAtPoint(life_lose_sound_clip, Camera.main.transform.position);
             this.LoseLife(0.5f);
             // GetComponent<GodMode>().ChangeMode();
