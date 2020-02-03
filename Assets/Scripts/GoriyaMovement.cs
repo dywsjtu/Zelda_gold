@@ -72,6 +72,11 @@ public class GoriyaMovement : MonoBehaviour
                     for (float moved = 0; moved < 1; moved += movement_speed * Time.deltaTime)
                     {
                         rb.velocity = dir * movement_speed;
+                        if (stun)
+                        {
+                            rb.velocity = Vector2.zero;
+                            break;
+                        }
                         yield return null;
                     }
                 }
