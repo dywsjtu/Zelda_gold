@@ -71,7 +71,7 @@ public class Health : MonoBehaviour
     {
         GameObject object_collided_with = other.gameObject;
 
-        if (object_collided_with.tag == "Stalfos" || object_collided_with.tag == "Keese" || object_collided_with.tag == "Gel" || object_collided_with.tag == "aquamentus" || object_collided_with.tag == "goriya" || object_collided_with.tag == "boomerange" || object_collided_with.tag == "BladeTrap" || object_collided_with.tag == "chess")
+        if (object_collided_with.tag == "Stalfos" || object_collided_with.tag == "Keese" || object_collided_with.tag == "Gel" || object_collided_with.tag == "aquamentus" || object_collided_with.tag == "goriya" || object_collided_with.tag == "boomerange" || object_collided_with.tag == "BladeTrap")
         {
             Debug.Log(object_collided_with.tag);
             AudioSource.PlayClipAtPoint(life_lose_sound_clip, Camera.main.transform.position);
@@ -100,6 +100,13 @@ public class Health : MonoBehaviour
         {
             this.LoseLife(0.5f);
             GetComponent<Rigidbody>().velocity = Vector3.zero;
+            StartCoroutine(Invincible());
+        }
+        if (other.gameObject.tag == "chess")
+        {
+            this.LoseLife(0.5f);
+            GetComponent<Rigidbody>().velocity = Vector3.zero;
+            StartCoroutine(Invincible());
         }
     }
 
@@ -159,7 +166,7 @@ public class Health : MonoBehaviour
     IEnumerator Invincible()
     {
         GetComponent<GodMode>().ChangeMode();
-        int duration = 10;
+        int duration = 50;
         while (duration > 0)
         {
             duration -= 1;
