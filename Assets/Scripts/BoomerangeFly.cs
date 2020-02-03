@@ -47,7 +47,7 @@ public class BoomerangeFly : MonoBehaviour
     {
         boomerange.GetComponent<SpriteRenderer>().sortingOrder = 2;
         rb.velocity = movement.GetDirection() * 5;
-        int t = 40;
+        int t = 25;
         while (t > 0)
         {
             t--;

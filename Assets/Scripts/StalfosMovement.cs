@@ -12,6 +12,8 @@ public class StalfosMovement : MonoBehaviour
 
     Coroutine current_move;
 
+    public bool stun = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +28,10 @@ public class StalfosMovement : MonoBehaviour
             Vector2 dir = direction[Random.Range(0, 4)];
             // if (dir.x != 0)
             // {
+            if (stun)
+            {
+                dir = Vector2.zero;
+            }
             if (Mathf.Round(transform.position.y) != transform.position.y)
             {
                 transform.position = new Vector3(transform.position.x, Mathf.Round(transform.position.y), transform.position.z);
