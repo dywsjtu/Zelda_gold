@@ -9,6 +9,7 @@ public class AquamentusMovement : MonoBehaviour
     public GameObject fireball;
     private Vector3 direction;
     private Animator animator;
+    public bool stun = false;
 
     void Start()
     {

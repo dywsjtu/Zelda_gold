@@ -39,6 +39,7 @@ public class AquamentusHealth : MonoBehaviour
         }
         if (other.CompareTag("linkboomerange"))
         {
+            StartCoroutine(Stun());
             AudioSource.PlayClipAtPoint(enemy_hit_sound_clip, Camera.main.transform.position);
             life -= 1;
         }
@@ -47,5 +48,21 @@ public class AquamentusHealth : MonoBehaviour
             AudioSource.PlayClipAtPoint(enemy_hit_sound_clip, Camera.main.transform.position);
             life -= 1;
         }
+    }
+
+    IEnumerator Stun()
+    {
+        GetComponent<AquamentusMovement>().stun = true;
+
+        float t = Time.time;
+        float progress = (Time.time - t) / 1f;
+        while (progress < 1f)
+        {
+            progress = (Time.time - t) / 1f;
+            GetComponent<SpriteRenderer>().enabled = !GetComponent<SpriteRenderer>().enabled;
+            yield return null;
+        }
+        GetComponent<SpriteRenderer>().enabled = true;
+        GetComponent<AquamentusMovement>().stun = false;
     }
 }
